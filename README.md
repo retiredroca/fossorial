@@ -66,6 +66,22 @@ iWelcome to Fossorial
 Place them at `/gopher/gophermap`, `/gopher/docs/gophermap`, etc. on the
 node's filesystem. Directories without a `gophermap` auto-generate a listing.
 
+## MeshOS
+
+[MeshOS](https://meshcore.co.uk/meshos.html) is a standalone UI firmware for
+LilyGo T-Deck / T-Pager / T-Display P4 devices that provides chat, maps, and
+encrypted messaging over MeshCore. It is **not an operating system with an
+app-loading mechanism** — there is no SDK, no plugin system, and no way to
+install third-party apps on it.
+
+Fossorial works alongside MeshOS in several ways:
+
+| Approach | Description |
+|----------|-------------|
+| **Infrastructure node** | Flash Fossorial on a RAK4631 (headless). It serves Gopher content on the mesh like a Room Server. Any MeshOS or MeshCore device can request content by sending a selector as a text message. The server is usable today without any MeshOS changes. |
+| **Standalone client** | Build a separate firmware (same pattern) that receives Gopher content and displays it — on a serial terminal, or with a display for a T-Deck-style experience. |
+| **Companion app client** | The MeshOS mobile/desktop apps (Android/iOS/web) connect to a Companion Radio node via BLE/USB. A Gopher client could be built into those apps, talking to the Fossorial server over the mesh via the companion protocol. |
+
 ## LoRa protocol
 
 Clients send selectors as `PAYLOAD_TYPE_TXT_MSG` starting with `/`. The server
