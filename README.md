@@ -66,6 +66,13 @@ iWelcome to Fossorial
 Place them at `/gopher/gophermap`, `/gopher/docs/gophermap`, etc. on the
 node's filesystem. Directories without a `gophermap` auto-generate a listing.
 
+## Meshtastic
+
+[Meshtastic](https://meshtastic.org) is an open-source LoRa mesh platform with
+its own radio protocol and API (GPL v3). Fossorial has a [Meshtastic
+module](firmware/meshtastic/FossorialModule.h) that serves Gopher content on
+the `PRIVATE_APP` port — see `firmware/meshtastic/` for integration steps.
+
 ## MeshOS
 
 [MeshOS](https://meshcore.co.uk/meshos.html) is a standalone UI firmware for
@@ -91,4 +98,11 @@ wire format details.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+Fossorial is **MIT** — see [LICENSE](LICENSE).
+
+| Platform | Dependency license | Fossorial module license |
+|----------|-------------------|--------------------------|
+| Core library | — | MIT |
+| TCP server | — | MIT |
+| MeshCore firmware | MIT | MIT (compatible) |
+| Meshtastic module | GPL v3 | MIT (GPL-compatible) |
